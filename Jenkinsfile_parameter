@@ -6,7 +6,9 @@ pipeline {
     stages {
         stage('Example') {
             steps {
+                echo "${params.name} !"
                 echo "${params.Greeting} World!"
+                echo "${params.description} !"
             }
         }
     }
