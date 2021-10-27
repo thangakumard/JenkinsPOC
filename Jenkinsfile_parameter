@@ -1,9 +1,9 @@
 pipeline {
     agent any
     parameters {
-        string(name: 'PERSON', required: true, description: 'Who should I say hello to?')
+        string(name: 'PERSON', description: 'Who should I say hello to?')
 
-        text(name: 'BIOGRAPHY', required: true, description: 'Enter some information about the person')
+        text(name: 'BIOGRAPHY', description: 'Enter some information about the person')
 
         booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
 
