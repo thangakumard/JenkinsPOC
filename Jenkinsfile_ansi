@@ -7,6 +7,14 @@ pipeline {
         stage('Build') {
             steps {
                 echo '\033[34mHello\033[0m \033[33mcolorful\033[0m \033[35mworld!\033[0m'
+                
+                printf "\e[31mHello World\e[0m\n"
+                printf "Normal \e[1mBold\e[0m\n"
+                printf "Normal \e[4mUnderlined\e[0m\n"
+                
+                ansiColor('vga') {
+                  echo '\033[42m\033[97mWhite letters, green background\033[0m'
+                }
             }
         }
     }
