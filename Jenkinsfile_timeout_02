@@ -1,17 +1,16 @@
 
 pipeline {
-     stage('Stage1') {
-       echo "This is from Stage1"
-     }
-    stage('Example') {
-      options {
-          timeout(time: 10, unit: 'SECONDS')   // timeout on this stage
-      }
-      steps {
-          sh "sleep 30s"
-      }
-    }
-    stage('Last Stage') {
-       echo "This is from Last Stage"
+    agent any
+    stages {
+        stage('Example1') {
+            steps {
+                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+            }
+        }
+        stage('Example2') {
+            steps {
+                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+            }
+        }
     }
 }
