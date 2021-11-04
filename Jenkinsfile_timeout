@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+
+    options {
+        timeout(time: 10, unit: 'SECONDS')   // timeout on whole pipeline job
+    }
+
+    stages {
+        stage('Example') {
+          options {
+              timeout(time: 10, unit: 'SECONDS')   // timeout on this stage
+          }
+          steps {
+              sh "sleep 30s"
+          }
+        }
+    }
+}
