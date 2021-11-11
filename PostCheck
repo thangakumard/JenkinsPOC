@@ -1,0 +1,25 @@
+
+ pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+                echo 'TestSuite:' + TestSuite
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+                echo 'TestConfig:' + TestConfig
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+                echo 'CqrsConfig:' + CqrsConfig
+            }
+        }
+    }
+}
