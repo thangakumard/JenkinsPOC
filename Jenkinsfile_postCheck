@@ -14,7 +14,7 @@
                 echo 'Testing..'
                 echo 'TestConfig:' + TestConfig
                 script {
-                 if(TestConfig == 'fail'){
+                 if(TestSuite == 'fail'){
                     echo 'INSIDE IF'
                     error("Should have thrown an exception")
                  }else{
