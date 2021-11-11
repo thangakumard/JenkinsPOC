@@ -12,12 +12,12 @@ pipeline {
             parallel {
                 stage('Build A') {
                     steps {
-                            build job: "/Jenkinsfile_postCheck/parameter1_01", wait: true
+                            build job: "/Jenkinsfile_postCheck", wait: true
                     }
                 }
                 stage('Build B') {
                     steps {
-                            build job: "/Jenkinsfile_postCheck/parameter1_02", wait: true
+                            build job: "/Jenkinsfile_postCheck", wait: true
                     }
                 }
             }
