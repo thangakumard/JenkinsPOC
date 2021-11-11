@@ -19,6 +19,7 @@
                     error("Should have thrown an exception")
                  }else{
                    echo 'INSIDE ELSE'
+                  }
                 }
             }
         }
