@@ -17,13 +17,13 @@ pipeline {
               // https://jenkins.io/doc/pipeline/examples/#jobs-in-parallel
               parallel (
                   linux: {
-                      build job: 'Jenkinsfile_postCheck', parameters: [string(name: 'TestSuite', value: "TestSuite"),string(name: 'TestConfig', value: "TestConfig"),string(name: 'CqrsConfig', value: "CqrsConfig")]
+                      build job: 'Jenkinsfile_postCheck', parameters: [string(name: 'parallel', value: "TestSuite"),string(name: 'TestConfig', value: "TestConfig"),string(name: 'CqrsConfig', value: "CqrsConfig")]
                   },
                   mac: {
-                      build job: 'Jenkinsfile_postCheck', parameters: [string(name: 'TestSuite', value: "TestSuite"),string(name: 'TestConfig', value: "TestConfig"),string(name: 'CqrsConfig', value: "CqrsConfig")]
+                      build job: 'Jenkinsfile_postCheck', parameters: [string(name: 'mac', value: "TestSuite"),string(name: 'TestConfig', value: "TestConfig"),string(name: 'CqrsConfig', value: "CqrsConfig")]
                   },
                   windows: {
-                      build job: 'Jenkinsfile_postCheck', parameters: [string(name: 'TestSuite', value: "TestSuite"),string(name: 'TestConfig', value: "TestConfig"),string(name: 'CqrsConfig', value: "CqrsConfig")]
+                      build job: 'Jenkinsfile_postCheck', parameters: [string(name: 'windows', value: "TestSuite"),string(name: 'TestConfig', value: "TestConfig"),string(name: 'CqrsConfig', value: "CqrsConfig")]
                   },
                   failFast: false)
           }
