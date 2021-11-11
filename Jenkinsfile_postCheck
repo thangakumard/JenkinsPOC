@@ -15,7 +15,7 @@
                 echo 'TestConfig:' + TestConfig
                 script {
                  if(TestConfig == 'fail'){
-                   assert true == false : "failing forcefully"
+                   fail("Should have thrown an exception")
                  }
                 }
             }
