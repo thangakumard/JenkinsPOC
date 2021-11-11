@@ -8,8 +8,18 @@ pipeline {
             }
         }
         stage('Test') {
-            steps {
-                echo 'Testing..'
+            failFast true
+            parallel {
+                stage('Build A') {
+                    steps {
+                            build job: "/Jenkinsfile_postCheck/parameter1_01", wait: true
+                    }
+                }
+                stage('Build B') {
+                    steps {
+                            build job: "/Jenkinsfile_postCheck/parameter1_02", wait: true
+                    }
+                }
             }
         }
         stage('Deploy') {
