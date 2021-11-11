@@ -13,8 +13,10 @@
             steps {
                 echo 'Testing..'
                 echo 'TestConfig:' + TestConfig
-                if(TestConfig == 'fail'){
-                  assert true == false : "failing forcefully"
+                script {
+                 if(TestConfig == 'fail'){
+                   assert true == false : "failing forcefully"
+                 }
                 }
             }
         }
