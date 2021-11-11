@@ -15,8 +15,10 @@
                 echo 'TestConfig:' + TestConfig
                 script {
                  if(TestConfig == 'fail'){
-                   fail("Should have thrown an exception")
-                 }
+                    echo 'INSIDE IF'
+                    error("Should have thrown an exception")
+                 }else{
+                   echo 'INSIDE ELSE'
                 }
             }
         }
